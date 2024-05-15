@@ -1,5 +1,5 @@
-FROM xhofe/alist:latest
-LABEL MAINTAINER="i@nn.ci"
+FROM dragonssr/alist:latest
+LABEL MAINTAINER="dragonssr"
 VOLUME /opt/alist/data/
 WORKDIR /opt/alist/
 COPY entrypoint.sh /entrypoint.sh
