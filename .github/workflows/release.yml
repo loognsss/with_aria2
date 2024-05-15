@@ -1,6 +1,7 @@
 name: release_docker
 
 on:
+  workflow_dispatch:
   push:
     tags:
       - "*"
@@ -22,7 +23,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: xhofe/alist-aria2
+          images: dragonssr/alist-aria2
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -33,7 +34,7 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v2
         with:
-          username: xhofe
+          username: dragonssr
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
